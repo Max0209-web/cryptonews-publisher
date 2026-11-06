@@ -301,7 +301,7 @@ def _schedule_kb(hours: list):
     rows = []
     for h in range(6, 24):
         active = h in hours
-        rows.append((f"{'' if active else '◻'} {h}:00", f"cn_hour_{h}"))
+        rows.append((f"{'вкл' if active else 'выкл'} {h}:00", f"cn_hour_{h}"))
 
     kb_rows = []
     for i in range(0, len(rows), 4):

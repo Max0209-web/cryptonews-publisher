@@ -50,3 +50,6 @@ def test_plain_interface_and_truncation():
     assert len(bot._safe_truncate('a' * 2000, 1000)) <= 1000
     keyboard = bot._main_kb().model_dump()
     assert keyboard['inline_keyboard'][0][0]['text'] == 'Сгенерировать пост'
+    hours = bot._schedule_kb([7]).inline_keyboard[0]
+    assert hours[0].text == 'выкл 6:00'
+    assert hours[1].text == 'вкл 7:00'
